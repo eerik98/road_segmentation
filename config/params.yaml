@@ -1,0 +1,9 @@
+/inference_node:
+  ros__parameters:
+    crop_top: 630
+    crop_bottom: 1430
+    crop_left: 0
+    crop_right: 2248
+    downscaling_factor: 2
+    model_path: '/home/eerik/deeplabv3/logs/resnet50-lr-0.001-200-manual-labels/checkpoints/best.pth'
+
