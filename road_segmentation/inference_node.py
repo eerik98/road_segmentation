@@ -17,6 +17,7 @@ class InferenceNode(Node):
         super().__init__('inference_node')
 
 
+        self.declare_parameter('image_topic',value='/front_camera/image_color/compressed')
         self.declare_parameter('crop_top',value=630)
         self.declare_parameter('crop_bottom',value=1430)
         self.declare_parameter('crop_left',value=0)
@@ -25,6 +26,7 @@ class InferenceNode(Node):
         self.declare_parameter('model_path',value='')
 
         # Get parameter values from the parameter server
+        image_topic = self.get_parameter('image_topic').get_parameter_value().string_value  
         self.crop_top = self.get_parameter('crop_top').get_parameter_value().integer_value
         self.crop_bottom = self.get_parameter('crop_bottom').get_parameter_value().integer_value
         self.crop_left = self.get_parameter('crop_left').get_parameter_value().integer_value
@@ -39,7 +41,7 @@ class InferenceNode(Node):
         #--------Subscriber---------------------------------------------
         self.image_subscriber = self.create_subscription(
             sensor_msgs.msg.CompressedImage,
-            '/front_camera/image_color/compressed',  # Adjust the topic to your camera input
+            image_topic,  # Adjust the topic to your camera input
             self.image_callback,
             5
         )
