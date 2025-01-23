@@ -1,16 +1,17 @@
+import sys
+import torch
 import rclpy
 from rclpy.node import Node
 import sensor_msgs
 from cv_bridge import CvBridge
 import cv2
 import numpy as np
-import torch
 import torchvision.transforms as T
 import torchvision.models.segmentation as segmentation
 from PIL import Image
 import time
 from matplotlib.colors import LinearSegmentedColormap
-import sys
+
 
 class InferenceNode(Node):
     def __init__(self):
