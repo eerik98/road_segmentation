@@ -17,7 +17,6 @@ class InferenceNode(Node):
     def __init__(self):
         super().__init__('inference_node')
 
-
         self.declare_parameter('image_topic',value='/front_camera/image_color/compressed')
         self.declare_parameter('crop_top',value=630)
         self.declare_parameter('crop_bottom',value=1430)
