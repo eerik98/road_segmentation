@@ -30,7 +30,7 @@ pip3 install -r <path to requirements.txt>
 
 6. Build your ROS2 workspace with `colcon build`
    
-7. Publish images to the topic defined in `config/params.yaml` either by playing a ros2 bag or running a ros2 camera driver.
+7. Publish images to the topic defined in `config/params.yaml` either by playing a ROS2 bag or running a ROS2 camera driver.
     
 8. Launch the node with `ros2 launch road_segmentation launch.py`. Detection are published to topics starting with `/road`:
      - `/mask` refers to binary detection: each pixel is either road or background
