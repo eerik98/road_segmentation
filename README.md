@@ -24,7 +24,7 @@ pip3 install -r <path to requirements.txt>
 3. In the launch file (`road_segmentation/launch/launch.py`) change the `venv_python_path` so that it points to the site packages of the created venv. 
 
 4. Download Deeplabv3 weights for road segmentation from [this link](https://drive.google.com/file/d/1AhhItat4xGq1_fdx23CGU606nS17pMtl/view?usp=sharing). These weights have been trained with around
-   10k winter driving samples labeled automatically as proposed in https://github.com/eerik98/road_segmentation. 
+   13k winter driving samples labeled automatically as proposed in https://github.com/eerik98/lidar-camera-road-autolabeling
 
 5. Set parameters in `config/params.yaml`. Most importantly you need to set the path to the model weights and the topic where images are published. Additionally, you can define crop boundaries and downscaling factor for the image to achieve higher fps. 
 
