@@ -125,7 +125,7 @@ class InferenceNode(Node):
         heatmap_colored = green_to_red(label)
         heatmap_colored = (heatmap_colored[:, :, :3] * 255).astype(np.uint8)
         heatmap_colored_bgr = cv2.cvtColor(heatmap_colored, cv2.COLOR_RGB2BGR)
-        overlay = cv2.addWeighted(self.image, 1.0, heatmap_colored_bgr, 0.3, 0)
+        overlay = cv2.addWeighted(self.image, 0.5, heatmap_colored_bgr, 0.5, 0)
         return overlay
 
     
